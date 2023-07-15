@@ -132,8 +132,7 @@ def chomp():
     pos = [snake.pos for snake in snake.blocks]
     while apple.pos in pos:
         apple.goto(random.randint(-15,15)*30, random.randint(-15,15)*30)
-    ## THE TROUBLESOME SECTION ##
-    newpos = list(snake.blocks[0].pos)
+    newpos = list(snake.blocks[-1].pos)
     if snake.blocks[0].direction == 0: newpos[1]+=30
     elif snake.blocks[0].direction == 1: newpos[0]-=30
     elif snake.blocks[0].direction == 2: newpos[1]-=30
