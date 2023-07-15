@@ -20,10 +20,6 @@ class SnakeBlock(turtle.Turtle):
         self.direction = direction
         self.goto(self.pos)
         self.num = num
-        #         self.mini = turtle.Turtle()
-        #         self.mini.color('white')
-        #         self.mini.penup()
-        #         self.mini.goto(self.pos)
         print(self)
     def next(self):
         """
@@ -31,10 +27,6 @@ class SnakeBlock(turtle.Turtle):
         """
         self.pos = (self.pos[0]+self.xdirections[self.direction], self.pos[1]+self.ydirections[self.direction])
         self.goto(self.pos)
-        ## print(f'{self.num} is at {self.pos}')
-        #         self.mini.clear()
-        #         self.mini.goto(self.pos)
-        #         self.mini.write(self.pos)
     def __repr__(self):
         return f'SnakeBlock at {self.pos} facing {self.direction}'
 class Snake:
@@ -84,7 +76,6 @@ class Snake:
         """
         keys = [next(iter(item.items()))[0] for item in self.turnplaces]
         values = [next(iter(item.items()))[1] for item in self.turnplaces]
-        # ## print(keys, values)
         for snakeblock in self.blocks:
             if snakeblock.pos in keys:
                 print(f'Turtle {list(reversed(snake.blocks)).index(snakeblock)} has turned')
